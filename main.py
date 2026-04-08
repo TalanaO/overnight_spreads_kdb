@@ -51,7 +51,7 @@ EMAIL_CONFIG = {
 }
 
 # Set to False in production to require a live kdb+ connection
-USE_MOCK_FALLBACK = True
+USE_MOCK_FALLBACK = False
 
 # Set to True to send email, False to print to terminal
 SEND_EMAIL = False

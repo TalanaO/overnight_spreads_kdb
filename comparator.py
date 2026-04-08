@@ -21,8 +21,8 @@ def compare_days(agg: pd.DataFrame, today: str, yesterday: str) -> pd.DataFrame:
             std_pct_change - percentage change in spread std deviation
             direction     - WIDENED / TIGHTENED / STABLE / VOLATILE
     """
-    today_dt     = pd.Timestamp(today).date()
-    yesterday_dt = pd.Timestamp(yesterday).date()
+    today_dt     = pd.Timestamp(today)
+    yesterday_dt = pd.Timestamp(yesterday)
 
     today_df = (
         agg[agg['date'] == today_dt]

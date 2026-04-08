@@ -4,7 +4,7 @@ from datetime import date, timedelta
 
 # ── Query templates ───────────────────────────────────────────────────────────
 QUOTE_QUERY = """
-select time, sym, bid, ask
+select date, time, sym, bid, ask
 from quotes
 where date in ({dates}),
       sym in ({syms})
@@ -55,8 +55,9 @@ def get_quotes(today: str, yesterday: str, pairs: list,
         raise ConnectionError(f"kdb+ connection failed ({host}:{port}): {e}")
 
     # Normalise column names to match the rest of the pipeline
-    df = df.rename(columns={'time': 'timestamp'})
-    df['timestamp'] = pd.to_datetime(df['timestamp'])
+    df = df.rename(columns={'time': 'time_col'})
+    df['timestamp'] = pd.to_datetime(df['date'].astype(str)) + pd.to_timedelta(df['time_col'])
+    df = df.drop(columns=['time_col'])
 
     return df
 
