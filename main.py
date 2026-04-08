@@ -38,7 +38,7 @@ PAIRS = ['EURUSD', 'GBPUSD', 'USDJPY', 'AUDUSD', 'USDCAD']
 
 KDB_CONFIG = {
     'host': 'localhost',
-    'port': 5000,
+    'port': 5001,
 }
 
 EMAIL_CONFIG = {

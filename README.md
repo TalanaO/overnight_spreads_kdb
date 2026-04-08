@@ -85,7 +85,7 @@ Open `main.py` and update the kdb+ config block:
 ```python
 KDB_CONFIG = {
     'host': 'localhost',   # your kdb+ host
-    'port': 5000,          # your kdb+ port
+    'port': 5001,          # your kdb+ port
 }
 ```
 

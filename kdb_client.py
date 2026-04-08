@@ -12,7 +12,7 @@ where date in ({dates}),
 
 
 def get_quotes(today: str, yesterday: str, pairs: list,
-               host: str = 'localhost', port: int = 5000) -> pd.DataFrame:
+               host: str = 'localhost', port: int = 5001) -> pd.DataFrame:
     """
     Retrieves FX spot quote data from kdb+ for two trading days.
 
@@ -62,7 +62,7 @@ def get_quotes(today: str, yesterday: str, pairs: list,
 
 
 def get_quotes_or_mock(today: str, yesterday: str, pairs: list,
-                       host: str = 'localhost', port: int = 5000,
+                       host: str = 'localhost', port: int = 5001,
                        fallback_to_mock: bool = True) -> pd.DataFrame:
     """
     Tries kdb+ first. If unavailable and fallback_to_mock=True,
